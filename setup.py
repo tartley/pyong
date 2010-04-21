@@ -23,8 +23,9 @@ setup(
     author_email='tartley@tartley.com',
     url='http://pypi.python.org/pypi/pyong',
     license='BSD',
-    packages=find_packages('src'),
-    package_dir = {'': 'src'},include_package_data=True,
+    packages=find_packages(NAME),
+    package_dir = {'': NAME},
+    include_package_data=True,
     zip_safe=False,
     install_requires=install_requires,
     entry_points={
