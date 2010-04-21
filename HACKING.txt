@@ -1,0 +1,13 @@
+
+Development environment
+=======================
+
+The Makefile is not required for anything - it acts simply as a cheatsheet for
+me to remember a few commonly-used commands. I'm running these commands from
+either a Windows prompt with Cygwin binaries on the path, or else a bash prompt
+in Ubuntu.
+
+Tests use Michael Foord's packages unittest2 and mock. Run the tests using::
+
+    unit2 discover
+
