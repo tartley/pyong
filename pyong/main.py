@@ -2,17 +2,17 @@
 import startup
 startup
 
+import pyglet
+
 import traceback
 
 from gameloop import Gameloop
-from world import World, populate
 
 def main():
-    world = World()
-    populate(world)
     try:
         gameloop = Gameloop()
-        gameloop.start(world)
+        gameloop.prepare()
+        pyglet.app.run()
     except Exception, e:
         traceback.print_exc()
     finally:

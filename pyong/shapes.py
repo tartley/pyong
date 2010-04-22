@@ -19,3 +19,7 @@ class Rect(object):
     def indices(self):
         return [(0, 2, 1), (2, 0, 3)]
 
+    @property
+    def area(self):
+        return self.width * self.height
+
