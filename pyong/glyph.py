@@ -1,4 +1,4 @@
-from itertools import chain
+from itertools import chain, repeat
 
 from OpenGL import GL as gl
 
@@ -21,4 +21,11 @@ class Glyph(object):
         '''
         assert all(len(seq[0]) == len(seq[i]) for i in xrange(1, len(seq)))
         return (gltype * (len(seq) * len(seq[0])))(*tuple(chain(*seq)))
+
+    @staticmethod
+    def from_item(item):
+        return Glyph(
+            item.outline.verts,
+            repeat(item.color, len(item.outline.verts)),
+            item.outline.indices)
 

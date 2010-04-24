@@ -21,6 +21,7 @@ class Gameloop(object):
         self.render = Render()
         self.controls = Controls(self.world.bat)
         self.window = Window(fullscreen=True, visible=False)
+        self.window.set_exclusive_mouse(True)
         self.window.on_draw = self.draw
         self.window.on_resize = self.render.resize
         self.window.on_mouse_motion = self.controls.mouse_move

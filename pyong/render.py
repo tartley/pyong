@@ -1,4 +1,6 @@
 
+from math import degrees
+
 from OpenGL import GL as gl
 
 
@@ -25,7 +27,7 @@ class Render(object):
         for item in world.items.itervalues():
             gl.glPushMatrix()
             gl.glTranslatef(item.x, item.y, 0)
-            gl.glRotatef(item.angle, 0, 0, 1)
+            gl.glRotatef(degrees(item.angle), 0, 0, 1)
             gl.glVertexPointer(2, gl.GL_FLOAT, 0, item.glyph.glVerts)
             gl.glColorPointer(4, gl.GL_FLOAT, 0, item.glyph.glColors)
             gl.glDrawElements(
