@@ -1,5 +1,8 @@
 from __future__ import division
 
+from math import cos, pi, sin
+
+
 class Rect(object):
 
     def __init__(self, width, height):
@@ -22,4 +25,31 @@ class Rect(object):
     @property
     def area(self):
         return self.width * self.height
+
+
+class Circle(object):
+
+    NUM_POINTS = 16
+
+    def __init__(self, radius):
+        self.radius = radius
+
+    @property
+    def verts(self):
+        verts = []
+        for n in xrange(0, self.NUM_POINTS):
+            a = n * 2 * pi / self.NUM_POINTS
+            verts.append( (self.radius * cos(a), self.radius * sin(a)) )
+        return verts
+
+    @property
+    def indices(self):
+        return [
+            (0, n, n+1)
+            for n in xrange(1, self.NUM_POINTS-1)
+        ]
+
+    @property
+    def area(self):
+        return 2 * pi * self.radius * self.radius
 

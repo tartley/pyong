@@ -6,6 +6,9 @@ from OpenGL import GL as gl
 
 class Render(object):
 
+    def __init__(self, bitmaps):
+        self.bitmaps = bitmaps
+
     def init(self):
         gl.glEnableClientState(gl.GL_VERTEX_ARRAY)
         gl.glEnableClientState(gl.GL_COLOR_ARRAY)
@@ -26,7 +29,8 @@ class Render(object):
     def draw(self, world):
         for item in world.items.itervalues():
             gl.glPushMatrix()
-            gl.glTranslatef(item.x, item.y, 0)
+            pos = item.position
+            gl.glTranslatef(pos.x, pos.y, 0)
             gl.glRotatef(degrees(item.angle), 0, 0, 1)
             gl.glVertexPointer(2, gl.GL_FLOAT, 0, item.glyph.glVerts)
             gl.glColorPointer(4, gl.GL_FLOAT, 0, item.glyph.glColors)

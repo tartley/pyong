@@ -25,7 +25,7 @@ class Glyph(object):
     @staticmethod
     def from_item(item):
         return Glyph(
-            item.outline.verts,
-            repeat(item.color, len(item.outline.verts)),
-            item.outline.indices)
+            item.geometry.verts,
+            repeat(item.color, len(item.geometry.verts)),
+            item.geometry.indices)
 
