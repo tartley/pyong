@@ -4,7 +4,7 @@ http://pypi.python.org/pypi/pyong
 Description
 ===========
 
-A simple one player game of Pong. Or is it?
+A simple one player game of Pong, using rigid-body physics.
 
 Controls
 ========
@@ -21,20 +21,16 @@ Python. Tested on Python 2.6.5.
 Status and Known Problems
 =========================
 
-In very early development. Not remotely finished.
+In very early development. Not remotely finished. Still kinda fun though.
 
 Credits
 =======
 
 Standing on the shoulders of giants.
 
-- `Distribute`_
-- `Buildout`_
-- `modern-package-template`_
-
-.. _Buildout: http://www.buildout.org/
-.. _Distribute: http://pypi.python.org/pypi/distribute
-.. _`modern-package-template`: http://pypi.python.org/pypi/modern-package-template
+    PyOpenGL
+    Pyglet
+    PyMunk
 
 Changes
 =======

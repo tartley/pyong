@@ -24,7 +24,7 @@ class Gameloop(object):
         self.render = Render(bitmaps)
         self.camera = Camera(zoom=10.0)
 
-        self.window = Window(fullscreen=True, visible=False)
+        self.window = Window(fullscreen=False, visible=False)
         self.window.set_exclusive_mouse(True)
         self.window.on_draw = self.draw
         self.window.on_resize = self.render.resize
